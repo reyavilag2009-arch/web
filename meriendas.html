@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meriendas Premium | Experiencia Premium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Meriendas Premium</h1>
+            <p class="subtitle">Realiza tu pedido de forma rápida y sencilla. Horario: 19:00h a 23:00h.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="menu-selector">
+            <h2><span class="highlight">1.</span> Elige tu Plato Principal</h2>
+            <p class="description">Selecciona una de nuestras deliciosas bases. Cada plato tiene un precio base de $2.00.</p>
+
+            <div class="menu-grid">
+                
+                <div class="menu-module chuleta" data-item="chuleta" data-price="2.00">
+                    <div class="module-content">
+                        <span class="icon">🥩</span>
+                        <h3>Arroz con Chuleta</h3>
+                        <p class="price-tag">$2.00</p>
+                        <p class="status-indicator">Toca para seleccionar</p>
+                    </div>
+                </div>
+
+                <div class="menu-module pollo" data-item="pollo" data-price="2.00">
+                    <div class="module-content">
+                        <span class="icon">🍗</span>
+                        <h3>Arroz con Pollo</h3>
+                        <p class="price-tag">$2.00</p>
+                        <p class="status-indicator">Toca para seleccionar</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="pedido-panel">
+            <h2><span class="highlight">2.</span> Personaliza y Confirma tu Orden</h2>
+            <p class="description">Ajusta la cantidad, añade extras y completa tus datos para la entrega.</p>
+            
+            <form action="https://formspree.io/f/f/rey.avilag2009@gmail.com" method="POST" class="form-pedido">
+                
+                <input type="hidden" name="_next" value="/confirmacion.html" /> 
+                
+                <div class="form-group full-width">
+                    <label for="item-selected">Tu Selección Actual:</label>
+                    <input type="text" id="item-selected" name="item_base" value="Ninguno" readonly class="data-display">
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad">Cantidad de Unidades:</label>
+                    <input type="number" id="cantidad" name="cantidad" value="1" min="1" required class="data-input">
+                </div>
+
+                <div class="form-group menestra-option full-width" style="display: flex; flex-wrap: wrap;">
+                    <label style="width: 100%; margin-bottom: 15px;">Añadir Menestra (Lenteja/Frijol):</label>
+                    <div class="radio-group">
+                        <input type="radio" id="con_menestra" name="menestra" value="0.50">
+                        <label for="con_menestra" class="menestra-label">Sí, con Menestra <span class="price-tag">(+$0.50 c/u)</span></label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="sin_menestra" name="menestra" value="0.00" checked>
+                        <label for="sin_menestra" class="menestra-label">No, sin Menestra</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono / WhatsApp:</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="Ej: +593 99 123 4567">
+                </div>
+                <div class="form-group full-width">
+                    <label for="direccion">Dirección y Referencia de Entrega:</label>
+                    <textarea id="direccion" name="direccion" rows="2" required placeholder="Ej: Calle Principal 123, Casa azul, frente a la farmacia."></textarea>
+                </div>
+
+                <div class="form-group full-width total-display">
+                    <label>Total Estimado de tu Orden:</label>
+                    <input type="text" id="total-cost" name="costo_total" value="$2.00" readonly class="data-display total-amount">
+                </div>
+
+                <button type="submit" class="btn-submit" id="confirm-button" disabled>Confirmar y Pagar</button>
+            </form>
+            </section>
+
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Meriendas Premium. Todos los derechos reservados.</p>
+            <p>Atención al Cliente: (593) 999 123 456</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

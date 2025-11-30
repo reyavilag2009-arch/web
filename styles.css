@@ -1,0 +1,321 @@
+/* Estilos Globales y Font (Inspirado en Apple) */
+body {
+    font-family: 'Inter', sans-serif; /* Fuente limpia y moderna */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f7; /* Fondo blanco-gris muy suave */
+    color: #1d1d1f; /* Texto casi negro, suave */
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased; /* Suavizado de fuentes para look Apple */
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px; /* Un poco más compacto y centrado */
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header - Limpio y Sutil */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0; /* Borde muy sutil */
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra muy suave */
+    color: #1d1d1f;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: -0.02em; /* Espaciado de letra sutil */
+    font-weight: 700;
+    color: #1d1d1f;
+}
+
+.subtitle {
+    font-size: 1.0em;
+    color: #6e6e73; /* Gris medio, para descripciones */
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+/* Secciones */
+main section {
+    padding: 40px;
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    border: 1px solid #e8e8ed; /* Borde muy sutil */
+}
+
+h2 {
+    color: #1d1d1f;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border-left: none; /* Quitamos el borde izquierdo */
+    padding-left: 0;
+    text-align: center; /* Centramos títulos de sección */
+}
+
+h2 .highlight {
+    color: #007aff; /* Azul de acento (Apple Blue) */
+}
+
+.description {
+    color: #6e6e73;
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 0.95em;
+}
+
+/* Menú Grid - Elementos como "Cards" de productos */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.menu-module {
+    background-color: #ffffff;
+    border: 1px solid #e8e8ed; /* Borde sutil */
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.03); /* Sombra muy ligera */
+}
+
+.menu-module:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: #d0d0d5; /* Borde ligeramente más oscuro en hover */
+}
+
+.menu-module.selected {
+    border-color: #007aff; /* Borde azul de selección */
+    background-color: #e6f2ff; /* Fondo azul muy pálido */
+    box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.4); /* Anillo de selección */
+    transform: scale(1.01); /* Ligeramente más grande al seleccionar */
+}
+
+.module-content h3 {
+    font-size: 1.5em;
+    color: #1d1d1f;
+    margin: 15px 0 10px;
+    font-weight: 600;
+}
+
+.icon {
+    font-size: 4em;
+    display: block;
+    margin-bottom: 10px;
+    color: #888; /* Iconos en gris */
+}
+
+.price-tag {
+    font-size: 1.2em;
+    color: #007aff; /* Precio en azul de acento */
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.status-indicator {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #6e6e73;
+    opacity: 0.8;
+}
+
+.menu-module.selected .status-indicator {
+    color: #007aff;
+    font-weight: 600;
+    opacity: 1;
+    /* Eliminamos la animación de parpadeo */
+    animation: none; 
+}
+
+/* Formulario - Estilo Limpio y Organizado */
+.form-pedido {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas por defecto */
+    gap: 25px 30px; /* Espaciado entre elementos */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e8e8ed;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.full-width {
+    grid-column: 1 / -1; /* Ocupa todo el ancho */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9em;
+}
+
+input:not([type="radio"]), textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dcdce0; /* Borde suave */
+    background-color: #f5f5f7; /* Fondo ligero */
+    color: #1d1d1f;
+    border-radius: 8px; /* Bordes más redondeados */
+    box-sizing: border-box; 
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95em;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input:focus, textarea:focus {
+    border-color: #007aff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2); /* Sombra de foco azul */
+    background-color: #ffffff; /* Fondo blanco al enfocar */
+}
+
+.data-display {
+    border-color: #007aff !important; /* Azul para displays de datos */
+    background-color: #e6f2ff !important;
+    font-weight: 600;
+    color: #1d1d1f !important;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Opciones de Radio para Menestra - Más estéticas */
+.radio-group {
+    display: flex; /* Para alinear el radio y el texto */
+    align-items: center;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    appearance: none; /* Oculta el radio nativo */
+    width: 18px;
+    height: 18px;
+    border: 2px solid #999;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.radio-group input[type="radio"]:checked {
+    background-color: #007aff;
+    border-color: #007aff;
+}
+
+.radio-group input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menestra-label {
+    margin-left: 0; /* Ya alineado con flex */
+    color: #1d1d1f;
+    font-weight: 400;
+    font-size: 0.95em;
+}
+
+/* Botón de Confirmación - Estilo iOS */
+.btn-submit {
+    grid-column: 1 / -1;
+    background-color: #007aff; /* Azul de acción */
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px; /* Más redondeado */
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0em;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background-color: #005bb5; /* Azul más oscuro en hover */
+    box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
+}
+
+.btn-submit:disabled {
+    background-color: #c4c4c4;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.total-display {
+    text-align: right;
+    padding-top: 15px; /* Espacio extra */
+    border-top: 1px solid #e8e8ed; /* Separador sutil */
+    margin-top: 25px;
+}
+
+.total-amount {
+    font-size: 1.6em;
+    color: #1d1d1f;
+    font-weight: 700;
+}
+
+/* Footer (Manteniendo el estilo) */
+footer {
+    background-color: #333333; /* Gris oscuro */
+    color: #f5f5f7;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.8em;
+    border-top: 1px solid #444;
+}
+
+/* Media Query para móvil */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px 0;
+    }
+    header, main section {
+        margin-bottom: 25px;
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .form-pedido {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .radio-group {
+        margin-bottom: 10px;
+    }
+}
