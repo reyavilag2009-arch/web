@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada | A.R.G</title>
+    <link rel="stylesheet" href="style.css"> <!-- Importante para que tome el modo oscuro -->
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .error-container {
+            padding: 20px;
+        }
+        .glitch {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px var(--secondary);
+            animation: glitch 1s infinite alternate;
+        }
+        
+        @keyframes glitch {
+            0% { transform: skew(0deg); }
+            20% { transform: skew(-10deg); }
+            40% { transform: skew(10deg); }
+            60% { transform: skew(-5deg); }
+            80% { transform: skew(5deg); }
+            100% { transform: skew(0deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="glitch">404</div>
+        <h1>Página no encontrada</h1>
+        <p style="color: #aaa; margin: 20px 0;">Parece que este enlace está roto o la página fue movida.</p>
+        <a href="/" class="btn btn-primary">Volver al Inicio</a>
+    </div>
+</body>
+</html>

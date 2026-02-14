@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="R9zJnf9dHCyJRpvrNIoIdTHQwqIw4lvfJdtvoIt6mXA" />
+    
+    <!-- SEO PROFESIONAL ECUADOR -->
+    <title>A.R.G | Ingeniería Digital & Diseño Web Profesional Ecuador</title>
+    <meta name="description" content="A.R.G Studio: Diseño web de élite estilo Apple en Ecuador. Ingeniería digital con 99% de optimización. Planes desde $24.99 semanales. Pagos vía Banco Pichincha y Deuna.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        :root {
+            --bg: #ffffff;
+            --text: #1d1d1f;
+            --card: #f5f5f7;
+            --gray: #86868b;
+            --blue: #0066cc;
+            --glass: rgba(255, 255, 255, 0.8);
+        }
+
+        [data-theme="dark"] {
+            --bg: #000000;
+            --text: #f5f5f7;
+            --card: #1c1c1e;
+            --gray: #a1a1a6;
+            --blue: #0a84ff;
+            --glass: rgba(0, 0, 0, 0.8);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; scroll-behavior: smooth; width: 100%; }
+
+        /* --- INTRO REVELACIÓN --- */
+        #intro-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 99999; display: flex; justify-content: center; align-items: center;
+            background: rgba(0,0,0,0.5); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
+            transition: all 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        .logo-anim { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; letter-spacing: 15px; color: #fff; animation: pulse 2s infinite ease-in-out; text-align: center; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.05); opacity: 1; } }
+        .loader-container { width: 200px; height: 2px; background: rgba(255,255,255,0.1); margin-top: 20px; position: relative; overflow: hidden; }
+        .loader-bar { width: 100%; height: 100%; background: var(--blue); position: absolute; left: -100%; animation: load 2.5s forwards; }
+        @keyframes load { 100% { left: 0%; } }
+        .fade-out { opacity: 0; visibility: hidden; pointer-events: none; }
+
+        /* --- UI ELEMENTS --- */
+        .theme-toggle, .menu-icon { position: fixed; top: 20px; z-index: 10000; width: 44px; height: 44px; border-radius: 50%; background: var(--card); display: flex; justify-content: center; align-items: center; cursor: pointer; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .theme-toggle { right: 20px; }
+        .menu-icon { left: 20px; }
+        .sidebar { position: fixed; left: -320px; top: 0; width: 280px; height: 100vh; background: var(--glass); backdrop-filter: blur(20px); z-index: 9999; transition: 0.6s; border-right: 1px solid rgba(0,0,0,0.05); padding: 60px 30px; }
+        .sidebar.active { transform: translateX(320px); }
+
+        /* --- SECCIONES RESPONSIVAS --- */
+        section { padding: 80px 5%; display: flex; flex-direction: column; align-items: center; text-align: center; min-height: auto; width: 100%; }
+        .headline { font-size: clamp(2.2rem, 8vw, 5.5rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 20px; width: 100%; }
+        #typing { color: var(--blue); border-right: 3px solid var(--blue); }
+
+        /* Dashboard Metrics */
+        .metrics { background: var(--card); border-radius: 30px; padding: 40px 20px; width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px; margin: 40px 0; border: 1px solid rgba(0,0,0,0.02); }
+        .metric-item h4 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -2px; }
+        .metric-item p { font-size: 0.75rem; font-weight: 700; color: var(--blue); text-transform: uppercase; }
+
+        /* Bento Grid Responsivo */
+        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; width: 100%; max-width: 1100px; margin-top: 40px; }
+        .bento-item { background: var(--card); border-radius: 30px; padding: 30px; grid-column: span 12; text-align: left; transition: 0.4s; display: flex; flex-direction: column; }
+        
+        @media (min-width: 768px) {
+            .bento-item { grid-column: span 4; padding: 45px; }
+            .bento-item.featured { grid-column: span 12; flex-direction: row; align-items: center; justify-content: space-between; }
+            .bento-item.wide { grid-column: span 8; flex-direction: row; justify-content: space-between; align-items: center; }
+            section { padding: 120px 8%; }
+        }
+
+        .price { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -2px; margin: 10px 0; }
+
+        /* Device Icons */
+        .devices { display: flex; gap: 10px; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.05); }
+        .devices i { font-size: 1.1rem; color: var(--gray); }
+        .active-dev { color: var(--blue) !important; }
+
+        /* FAQ */
+        .faq-container { width: 100%; max-width: 900px; margin-top: 40px; }
+        .faq-item { background: var(--card); margin-bottom: 12px; padding: 20px; border-radius: 20px; text-align: left; overflow: hidden; transition: 0.3s; }
+        .faq-question { font-size: clamp(0.9rem, 4vw, 1.2rem); font-weight: 700; display: flex; justify-content: space-between; align-items: center; cursor: pointer; gap: 15px; }
+        .faq-answer { max-height: 0; opacity: 0; transition: all 0.4s ease; color: var(--gray); font-size: 0.95rem; padding-top: 0; line-height: 1.6; }
+        .faq-item.active .faq-answer { max-height: 300px; opacity: 1; padding-top: 15px; }
+        .faq-item.active i { transform: rotate(45deg); }
+
+        /* Pagos */
+        .payment-box { background: var(--card); padding: 40px 20px; border-radius: 30px; width: 100%; max-width: 900px; margin-top: 20px; text-align: center; }
+        .payment-icons { display: flex; justify-content: center; gap: 40px; margin-top: 25px; flex-wrap: wrap; }
+        .bank-icon i { font-size: 2.5rem; margin-bottom: 10px; }
+
+        /* Contactos */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; width: 100%; max-width: 1000px; margin-top: 40px; }
+        .contact-card { background: var(--card); padding: 30px 20px; border-radius: 25px; text-decoration: none; color: var(--text); font-weight: 800; transition: 0.4s; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .contact-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .contact-card i { font-size: 2rem; }
+
+        .apple-btn { background: var(--text); color: var(--bg); padding: 14px 28px; border-radius: 30px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; margin-top: 15px; font-size: 0.9rem; }
+
+        @media (max-width: 480px) {
+            .headline { font-size: 2.2rem; }
+            .price { font-size: 2.5rem; }
+            .metrics { grid-template-columns: 1fr; }
+            .sidebar { width: 250px; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <!-- INTRO REVELACIÓN -->
+    <div id="intro-overlay">
+        <div style="display: flex; flex-direction: column; align-items: center; width: 90%;">
+            <div class="logo-anim">A.R.G</div>
+            <div class="loader-container"><div class="loader-bar"></div></div>
+        </div>
+    </div>
+
+    <!-- UI -->
+    <div class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-sun" id="theme-icon"></i></div>
+    <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+
+    <div class="nav-sidebar sidebar" id="sidebar">
+        <h2 style="font-weight: 800; margin-bottom: 30px; font-size: 1.5rem;">A.R.G Studio</h2>
+        <nav style="display:flex; flex-direction:column; gap:15px;">
+            <a href="#inicio" onclick="toggleMenu()" style="text-decoration:none; color:var(--text); font-weight:600;">Inicio</a>
+            <a href="#ingenieria" onclick="toggleMenu()" style="text-decoration:none; color:var(--text); font-weight:600;">Ingeniería</a>
+            <a href="#planes" onclick="toggleMenu()" style="text-decoration:none; color:var(--text); font-weight:600;">Planes</a>
+            <a href="#faq" onclick="toggleMenu()" style="text-decoration:none; color:var(--text); font-weight:600;">FAQ</a>
+            <a href="#contacto" onclick="toggleMenu()" style="text-decoration:none; color:var(--text); font-weight:600;">Contacto</a>
+        </nav>
+        <p style="margin-top:auto; font-size: 0.65rem; color:var(--gray); letter-spacing: 1px;">A.R.G ECUADOR © 2025- - 2026</p>
+    </div>
+
+    <main>
+        <!-- HERO -->
+        <section id="inicio" style="padding-top: 140px;">
+            <span style="color:var(--blue); font-weight:700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem;">Exclusivo Ecuador</span>
+            <h1 class="headline">Diseñamos tu <br> <span id="typing"></span></h1>
+            <p style="color:var(--gray); font-size: clamp(1rem, 4vw, 1.4rem); max-width:700px; margin-top: 15px;">Ingeniería digital de alto rendimiento. Diseño estilo Apple exclusivo para el mercado ecuatoriano.</p>
+            <a href="#planes" class="apple-btn">Explorar Planes</a>
+        </section>
+
+        <!-- MÉTRICAS -->
+        <section id="ingenieria">
+            <h2 style="font-size: clamp(1.8rem, 5vw, 3rem); font-weight:800; letter-spacing: -1px;">Rendimiento Certificado</h2>
+            <div class="metrics">
+                <div class="metric-item"><h4>99%</h4><p>SEO LOCAL</p></div>
+                <div class="metric-item"><h4>0.4s</h4><p>CARGA</p></div>
+                <div class="metric-item"><h4>100%</h4><p>MOBILE READY</p></div>
+            </div>
+        </section>
+
+        <!-- PLANES -->
+        <section id="planes">
+            <h2 class="headline" style="font-size: clamp(2rem, 6vw, 3.5rem);">Suscripciones</h2>
+            <div class="bento-grid">
+                <!-- Business Pro -->
+                <div class="bento-item featured">
+                    <div style="text-align: left; flex: 1;">
+                        <span style="color:var(--blue); font-weight:800; font-size: 0.75rem;">RECOMENDADO</span>
+                        <h3 style="font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 8px 0;">Business Pro</h3>
+                        <p style="opacity:0.8; font-size: 0.95rem; max-width: 400px;">La infraestructura completa para dominar el mercado nacional.</p>
+                        <div class="devices">
+                            <i class="fas fa-mobile-alt active-dev"></i>
+                            <i class="fas fa-tablet-alt active-dev"></i>
+                            <i class="fas fa-laptop active-dev"></i>
+                            <i class="fas fa-desktop active-dev"></i>
+                        </div>
+                    </div>
+                    <div style="text-align: right; margin-top: 20px;">
+                        <p class="price">$199.99<small style="font-size: 0.9rem;">/mes</small></p>
+                        <p style="font-weight:700; color:var(--blue); font-size: 1rem;">$49.99 semanal</p>
+                        <a href="https://wa.me/593990698954" class="apple-btn">Reservar</a>
+                    </div>
+                </div>
+
+                <!-- Essential -->
+                <div class="bento-item">
+                    <h3>Essential</h3>
+                    <p class="price" style="font-size: 2.2rem;">$99.99</p>
+                    <p style="font-weight:700; color:var(--blue);">$24.99 semanal</p>
+                    <a href="https://wa.me/593990698954" class="apple-btn">Reservar</a>
+                    <div class="devices" style="margin-top: 20px;">
+                        <i class="fas fa-mobile-alt active-dev"></i>
+                        <i class="fas fa-tablet-alt"></i>
+                        <i class="fas fa-laptop active-dev"></i>
+                        
+                    </div>
+                </div>
+
+                <!-- Global Elite -->
+                <div class="bento-item wide">
+                    <div style="flex: 1;">
+                        <h3>Global Elite</h3>
+                        <p class="price" style="font-size: 2.2rem;">$399.99</p>
+                        <p style="font-weight:700; color:var(--blue);">$99.99 semanal</p>
+                        <a href="https://wa.me/593990698954" class="apple-btn">Reservar</a>
+                    </div>
+                    <div class="devices" style="margin-top: 20px;">
+                        <i class="fas fa-mobile-alt active-dev"></i>
+                        <i class="fas fa-tablet-alt active-dev"></i>
+                        <i class="fas fa-laptop active-dev"></i>
+                        <i class="fas fa-desktop active-dev"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGOS -->
+            <div class="payment-box">
+                <h3 style="font-weight: 800; font-size: 1.1rem;">Métodos de Pago Nacionales</h3>
+                <div class="payment-icons">
+                    <div class="bank-icon"><i class="fas fa-university" style="color: #ffdd00;"></i><p style="font-weight:900; font-size:0.6rem;">PICHINCHA</p></div>
+                    <div class="bank-icon"><i class="fas fa-mobile-alt" style="color: #25d366;"></i><p style="font-weight:900; font-size:0.6rem;">DEUNA!</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight:900; margin-bottom:30px;">Preguntas</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">¿En cuánto tiempo está lista mi web? <i class="fas fa-plus"></i></div>
+                    <div class="faq-answer">Dependiendo del proyecto, suele tardar entre 7 a 14 días laborables desde la recepción de la información completa.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Incluye dominio y hosting profesional? <i class="fas fa-plus"></i></div>
+                    <div class="faq-answer">Sí, todos nuestros planes incluyen (.web.app) Gratis y hosting optimizado de alta velocidad por el primer año. Contamos tambien con dommnio (.com) $14.99 anual</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Cómo funcionan los pagos semanales? <i class="fas fa-plus"></i></div>
+                    <div class="faq-answer">Es un sistema de financiamiento directo para emprendedores, permitiendo dividir la inversión mensual en 4 pagos cómodos.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Aceptan otros métodos de pagos? <i class="fas fa-plus"></i></div>
+                    <div class="faq-answer">No, por el momento solo contamos con esas dos formas de pago, Deuna y Pichincha. Pero en un futuro podríamos aceptar otros métodos de pago.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto">
+            <h2 class="headline" style="font-size: clamp(2rem, 6vw, 3.5rem);">Hablemos.</h2>
+            <div class="contact-grid">
+                <a href="https://wa.me/593990698954" class="contact-card">
+                    <i class="fab fa-whatsapp" style="color:#25d366;"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="mailto:a.r.gcontact26@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope" style="color:#ea4335;"></i>
+                    <span>Gmail</span>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61587969800638" class="contact-card">
+                    <i class="fab fa-facebook-f" style="color:#1877f2;"></i>
+                    <span>Facebook</span>
+                </a>
+            </div>
+            <div style="margin-top:60px; padding: 20px; border-top: 1px solid rgba(0,0,0,0.05); width: 100%;">
+                <p style="font-weight: 800; font-size: 1.1rem;">+593 990 698 954</p>
+                <p style="color:var(--gray); font-size: 0.85rem; margin-top: 5px;">A.R.G Carlos Avila   | Ecuador</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Intro
+        window.addEventListener('load', () => { 
+            setTimeout(() => { document.getElementById('intro-overlay').classList.add('fade-out'); }, 2500); 
+        });
+
+        // Sidebar & Theme
+        function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
+        function toggleTheme() {
+            const b = document.body; const i = document.getElementById('theme-icon');
+            if (b.getAttribute('data-theme') === 'dark') { 
+                b.removeAttribute('data-theme'); i.className = 'fas fa-moon'; 
+            } else { 
+                b.setAttribute('data-theme', 'dark'); i.className = 'fas fa-sun'; 
+            }
+        }
+
+        // FAQ Logic
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); });
+        });
+
+        // Typing Effect
+        const typing = document.getElementById('typing');
+        const phrases = ["Futuro Digital.", "Éxito Online.", "Marca Líder.", "Dominio Web."];
+        let pIdx = 0, cIdx = 0, isDel = false;
+        function type() {
+            const curr = phrases[pIdx];
+            typing.textContent = isDel ? curr.substring(0, cIdx--) : curr.substring(0, cIdx++);
+            if (!isDel && cIdx === curr.length) { isDel = true; setTimeout(type, 2000); }
+            else if (isDel && cIdx === 0) { isDel = false; pIdx = (pIdx + 1) % phrases.length; setTimeout(type, 500); }
+            else { setTimeout(type, isDel ? 50 : 120); }
+        }
+        type();
+    </script>
+</body>
+</html>

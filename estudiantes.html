@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Estudiante | A.R.G Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+        :root {
+            --bg: #ffffff;
+            --text: #1d1d1f;
+            --student-blue: #0071e3;
+            --card: #f5f5f7;
+            --gray: #86868b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; overflow-x: hidden; }
+
+        header {
+            padding: 80px 5%;
+            text-align: center;
+            background: var(--card);
+            border-bottom: 1px solid #e5e5e7;
+        }
+
+        .badge-student {
+            background: #e8f0fe;
+            color: var(--student-blue);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        h1 { font-size: clamp(2.2rem, 8vw, 4rem); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 15px; }
+        .subtitle { font-size: 1.25rem; color: var(--gray); max-width: 700px; margin: 0 auto; font-weight: 500; }
+
+        section { padding: 80px 8%; max-width: 1100px; margin: 0 auto; }
+
+        /* Grid de Planes Estudiantes */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 50px 35px;
+            border-radius: 30px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid transparent;
+        }
+
+        .card:hover { transform: scale(1.02); background: #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.05); }
+
+        .card h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; }
+        
+        .price-box { margin: 25px 0; }
+        .price-student { font-size: 3.5rem; font-weight: 800; color: var(--text); letter-spacing: -2px; }
+        .price-student small { font-size: 1.2rem; color: var(--gray); font-weight: 500; letter-spacing: 0; }
+
+        .features { list-style: none; margin-bottom: 40px; flex-grow: 1; }
+        .features li { padding: 12px 0; color: var(--gray); display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .features i { color: var(--student-blue); font-size: 1.1rem; }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .btn-primary { background: var(--student-blue); color: white; }
+        .btn-primary:hover { background: #0077ed; transform: translateY(-2px); }
+
+        .btn-outline { 
+            background: transparent; 
+            border: 2px solid var(--text); 
+            color: var(--text); 
+            margin-top: 60px;
+            padding: 12px 30px;
+        }
+
+        .payment-info {
+            margin-top: 50px;
+            background: var(--card);
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .bank-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 60px 5%; }
+            .plans-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="badge-student">Soporte Académico Especializado</div>
+        <h1>Tu proyecto de informática, <br> hecho por expertos.</h1>
+        <p class="subtitle">Código limpio, moderno y funcional. Olvídate del estrés y asegura tu nota con A.R.G.</p>
+    </header>
+
+    <section>
+        <div class="plans-grid">
+            <!-- Plan Solo Código -->
+            <div class="card">
+                <h3>Solo Código</h3>
+                <p style="color: var(--gray);">Ideal si solo necesitas los archivos para entregar.</p>
+                <div class="price-box">
+                    <span class="price-student">$7.99<small>/proyecto</small></span>
+                </div>
+                
+                <ul class="features">
+                    <li><i class="fas fa-file-code"></i> Archivos HTML, CSS y JS</li>
+                    <li><i class="fas fa-comment-dots"></i> Código comentado (Explicado)</li>
+                    <li><i class="fas fa-bolt"></i> Entrega en 24-48 horas</li>
+                    <li><i class="fas fa-check"></i> Diseño 100% Responsivo</li>
+                </ul>
+
+                <a href="https://wa.me/593990698954?text=Hola%20ARG,%20deseo%20el%20Plan%20Solo%20C%C3%B3digo%20estudiantil" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> PEDIR CÓDIGO
+                </a>
+            </div>
+
+            <!-- Plan Full Despliegue -->
+            <div class="card" style="background: var(--text); color: white;">
+                <h3 style="color: var(--student-blue);">Full Online</h3>
+                <p style="opacity: 0.7;">Para impresionar al profesor con una URL real.</p>
+                <div class="price-box">
+                    <span class="price-student" style="color: white;">$14.99<small style="color: #888;">/proyecto</small></span>
+                </div>
+                
+                <ul class="features">
+                    <li><i class="fas fa-globe"></i> <strong>Hosting + URL Personalizada</strong></li>
+                    <li><i class="fas fa-file-code"></i> Archivos fuente incluidos</li>
+                    <li><i class="fas fa-comment-dots"></i> Código comentado (Explicado)</li>
+                    <li><i class="fas fa-shield-alt"></i> Certificado SSL (Sitio Seguro)</li>
+                    <li><i class="fas fa-magic"></i> Animaciones Premium</li>
+                </ul>
+
+                <a href="https://wa.me/593990698954?text=Hola%20ARG,%20deseo%20el%20Plan%20Full%20Online%20estudiantil" class="btn btn-primary" style="background: #fff; color: #000;">
+                    <i class="fab fa-whatsapp"></i> PEDIR PROYECTO FULL
+                </a>
+            </div>
+        </div>
+
+        <!-- INFO DE PAGO -->
+        <div class="payment-info">
+            <p style="font-weight: 700; color: var(--gray);">MÉTODOS DE PAGO ACEPTADOS EN ECUADOR</p>
+            <div class="bank-icons">
+                <span><i class="fas fa-university" style="color: #ffcc00;"></i> PICHINCHA</span>
+                <span><i class="fas fa-mobile-alt" style="color: #25d366;"></i> DEUNA!</span>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.6;">* El servicio inicia con el 50% de anticipo por seguridad.</p>
+        </div>
+
+        <center>
+            <a href="/" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> VER PLANES PROFESIONALES (EMPRESAS)
+            </a>
+        </center>
+    </section>
+
+       <!-- FOOTER ACTUALIZADO -->
+    <footer style="padding: 30px 40%; text-align: left; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 50px;">
+        <p style="font-weight: 700; color: var(--text); font-size: 0.9rem;">
+            A.R.G Digital Engineering - Support Académico 2025-2026
+        </p>
+        <p style="margin-top: 5px; opacity: 0.5; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase;">
+            GUAYAQUIL | ECUADOR
+        </p>
+    </footer>
+
+</body>
+</html>
